@@ -38,7 +38,9 @@ router.post('/login', async(req, res)=>{
 
     res.cookie('jwtToken', token, {
         expires: new Date(Date.now() + 1000*60*60*24*15),
-        httpOnly: true
+        httpOnly: true,
+        secure: true,
+        sameSite: 'none',
     })
     // console.log("token: ", token)
     // console.log(req.cookies.jwtToken)
