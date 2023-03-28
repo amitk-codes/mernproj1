@@ -70,7 +70,7 @@ router.post('/message', async(req, res)=>{
 })
 
 router.get('/logout', async(req, res)=>{
-    res.clearCookie('jwtToken')
+    res.clearCookie('jwtToken', {domain: 'appmern-h4ot.onrender.com', path: '/'})
     res.status(200).json({message: 'User logged out'})
 })
   
